@@ -1,0 +1,71 @@
+
+
+
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/loading.ejs') %>
+<%- include('./partials/header.ejs') %>
+
+<body>
+    <div class="main-container">
+        <div class="navcontainer">
+            <%- include('./partials/nav.ejs') %>
+          </div>
+          <div class="main">
+            <!-- <div class="searchbar2">
+              <input type="text" placeholder="Search" >
+              <div class="searchbtn">
+                <img src="/image/search.png" class="icn srchicn"  alt="" >
+              </div>
+            </div> -->
+        
+            <div class="box-container">
+              <div class="box box1">
+                <div class="text">
+                  <h2 class="topic-heading"><%= totalProjects %></h2>
+                  <br />
+                  <h2 class="topic">Projects</h2>
+                </div>
+        
+                <img src="/image/projects.png" alt="Movies" />
+              </div>
+        
+              <div class="box box2">
+                <div class="text">
+                  <h2 class="topic-heading"><%= totalPhotos %></h2>
+                  <br />
+                  <h2 class="topic">Photos</h2>
+                </div>
+                <img src="/image/image.png" alt="social" />
+              </div>
+        
+              <div class="box box3">
+                <div class="text">
+                  <h2 class="topic-heading"><%= totalBlogs %></h2>
+                  <br />
+                  <h2 class="topic">Blogs</h2>
+                </div>
+        
+                <img src="/image/blogs.png" alt="projects" />
+              </div>
+        
+              <div class="box box4">
+                <div class="text">
+                  <h2 class="topic-heading"><%= totalEnquriy %></h2>
+                  <br />
+                  <h2 class="topic">Enquiry</h2>
+                </div>
+        
+                <img src="/image/enquriy.png" alt="upcoming" />
+              </div>
+            </div>
+            
+        
+          </div>
+          
+        </div>
+        
+      
+        <script src="/js/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+

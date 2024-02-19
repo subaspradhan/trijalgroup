@@ -1,0 +1,133 @@
+<%- include('../partials/head.ejs') %>
+    <%- include('../partials/loading.ejs') %>
+        <%- include('../partials/header.ejs') %>
+
+
+            <body>
+
+                <div class="main-container">
+                    <div class="navcontainer">
+                        <%- include('../partials/nav.ejs') %>
+                    </div>
+                    <div class="main">
+                        <!-- <div class="searchbar2">
+                                    <input type="text" placeholder="Search">
+                                    <div class="searchbtn">
+                                        <img src="../images/search.png" class="icn srchic" alt="search-button">
+                                    </div>
+                                </div> -->
+
+                        <h1 class="recent-Articles">Edit Profile</h1><br>
+                        <div class="report-container1">
+
+                            <div class="report-header">
+                                <!-- <h1 class="recent-Articles">Producer</h1><br> -->
+                            </div>
+
+                            <div class="form">
+                                <% if (data && data.length> 0) { %>
+                                    <% data.forEach((row)=> { %>
+                                        <form action="/editprofile" method="POST">
+                                            <div class="row" style="display: none;">
+                                                <div class="col-1">
+                                                    <label class="lable">Name</label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="id" value="<%= row.id %>"
+                                                        class="inp" /><br /><br />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-1">
+                                                    <label class="lable">Name</label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="name" value="<%= row.name %>"
+                                                        class="inp" /><br /><br />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-1">
+                                                    <label class="lable">Email</label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="email" name="email" value="<%= row.username %>"
+                                                        class="inp" /><br /><br />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-1">
+                                                    <label class="lable">Phone Number</label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="phone" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" value="<%= row.phno %>"
+                                                        class="inp" /><br /><br />
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-1">
+                                                    <label class="label">Password</label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="password" class="inp"
+                                                        value="<%= row.password %>" /><br /><br />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-1">
+                                                    <label class="label">New Password</label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="password" id="newPassword" class="inp" /><br /><br />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-1">
+                                                    <label class="label">Confirm Password</label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" id="confirmPassword" name="password" class="inp"
+                                                        oninput="checkPasswordMatch()" value="<%= row.password %>" /><br />
+                                                    <span id="passwordMatchError" style="color: red;"></span><br />
+                                                </div>
+                                            </div>
+                                            <div class="button-section">
+                                                <button type="submit" class="butt">Submit</button>
+                                                <a href="/viewprofile"><button type="button"
+                                                        class="butt">Back</button></a>
+                                            </div>
+
+                                        </form>
+                                        <% }); %>
+                                            <% } else { %>
+
+                                                <p>No data available</p>
+
+                                                <% } %>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+                </div>
+                <script src="/js/script.js"></script>
+
+                <script>
+                    function checkPasswordMatch() {
+                        var newPassword = document.getElementById('newPassword').value;
+                        var confirmPassword = document.getElementById('confirmPassword').value;
+                        var errorSpan = document.getElementById('passwordMatchError');
+                
+                        if (newPassword !== confirmPassword) {
+                            errorSpan.textContent = 'Passwords do not match!';
+                        } else {
+                            errorSpan.textContent = '';
+                        }
+                    }
+                </script>
+
+            </body>

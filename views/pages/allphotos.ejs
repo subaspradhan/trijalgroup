@@ -1,0 +1,65 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/loading.ejs') %>
+<%- include('../partials/header.ejs') %>
+
+<body>
+<div class="main-container">
+    <div class="navcontainer">
+      <%- include('../partials/nav.ejs') %>
+     </div>
+    <div class="main">
+        <!-- <div class="searchbar2">
+            <input type="text" placeholder="Search">
+            <div class="searchbtn">
+              <img src="../images/search.png" class="icn srchic" alt="search-button">
+              </div>
+        </div> -->
+        
+            <div class="report-header">
+                <h1 class="recent-Articles">All&nbsp;Photos</h1><br>
+            </div> 
+        <div class="report-container-upr">
+            <a href="javascript:void(0);"><button type="button" id="add1" onclick="print1('table2')">Print</button></a>
+            <div id="table2">
+          <table class="mt-5">
+            <thead>
+                <tr> 
+                    <th>SN</th>
+                    <th>Photo</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+              <% if (data && data.length > 0) { %>
+                <% data.forEach((row) => { %>
+                    <tr>
+                        <td><%= row.id %></td>
+                      <td class="td-img">
+                       
+                            <img src="/gallery/<%= row.photo %>" class="student-img" alt="Image">
+                       
+                    </td>
+                        <td><%= row.name %></td>
+                        <td><%= row.type %></td>
+                        <td>
+                            <a href="/deletephotos/<%= row.id %>"><i class="fa-solid fa-trash fa-lg" id="icon1"></i></a>
+                        </td>
+                    </tr>
+                <% }); %>
+            <% } else { %>
+                <tr>
+                    <td colspan="5">No data available</td>
+                </tr>
+            <% } %>
+          </tbody>
+                
+           </table>
+        </div>
+        </div>
+    </div>
+</div>
+<script src="/js/script.js"></script>
+</body>

@@ -1,0 +1,82 @@
+<%- include('../partials/head.ejs') %>
+    <%- include('../partials/loading.ejs') %>
+        <%- include('../partials/header.ejs') %>
+
+
+            <body>
+                
+                        <div class="main-container">
+                            <div class="navcontainer">
+                                <%- include('../partials/nav.ejs') %>
+                            </div>
+                            <div class="main">
+                                <!-- <div class="searchbar2">
+                                    <input type="text" placeholder="Search">
+                                    <div class="searchbtn">
+                                        <img src="../images/search.png" class="icn srchic" alt="search-button">
+                                    </div>
+                                </div> -->
+
+                                <!-- <h1 class="recent-Articles">Edit Book Data</h1><br> -->
+                                <div class="report-container1">
+
+                                    <div class="report-header">
+                                    </div>
+                                    
+                                            <div class="form">
+                                                <form action="/addblogs" method="post" enctype="multipart/form-data">
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <label class="lable">Heading</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="text" name="head" placeholder="Name"
+                                                                class="inp" required/><br /><br />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <label class="lable">Details</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <!-- <input type="date" name="release_date" placeholder="date" class="inp" ><br/><br/> -->
+                                                            <textarea name="details" id="" cols="30" rows="10" class="inp"></textarea><br/><br/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <label class="lable">Date</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="date" name="date" 
+                                                                placeholder="date"
+                                                                class="inp" required/><br /><br />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <label class="lable">Image Insert Here</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="file" id="image" name="photo" class="inp1" accept="image/*" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-section">
+                                                        <button type="submit" class="butt">Submit</button>
+                                                        <a href="/allblogs"><button type="button"
+                                                                class="butt">Back</button></a>
+                                                    </div>
+                                                   
+                                                </form>
+                                            </div>
+                                            
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        </div>
+                        <script src="/js/script.js"></script>
+                    
+            </body>

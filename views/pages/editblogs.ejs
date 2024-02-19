@@ -1,0 +1,100 @@
+<%- include('../partials/head.ejs') %>
+    <%- include('../partials/loading.ejs') %>
+        <%- include('../partials/header.ejs') %>
+
+
+            <body>
+               
+                        <div class="main-container">
+                            <div class="navcontainer">
+                                <%- include('../partials/nav.ejs') %>
+                            </div>
+                            <div class="main">
+                                <!-- <div class="searchbar2">
+                                    <input type="text" placeholder="Search">
+                                    <div class="searchbtn">
+                                        <img src="../images/search.png" class="icn srchic" alt="search-button">
+                                    </div>
+                                </div> -->
+
+                                <h1 class="recent-Articles">Edit Projects</h1><br>
+                                <div class="report-container1">
+
+                                    <div class="report-header">
+                                        <!-- <h1 class="recent-Articles">Producer</h1><br> -->
+                                    </div>
+
+                                    <div class="form">
+                                        <% if (data && data.length> 0) { %>
+                                            <% data.forEach((row)=> { %>
+                                                <form action="/editblogs/<%= row.id %>" method="POST"
+                                                    enctype="multipart/form-data">
+                                                    <div class="row" style="display: none;">
+                                                        <div class="col-1">
+                                                            <label class="lable">Name</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="text" name="id" value="<%= row.id %>"
+                                                                class="inp" /><br /><br />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <label class="lable">Heading</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="text" name="head" value="<%= row.head %>"
+                                                                class="inp" /><br /><br />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <label class="lable">Details</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <!-- <input type="date" name="release_date" placeholder="date" class="inp" ><br/><br/> -->
+                                                            <textarea name="details" id="" cols="30" rows="10" class="inp"><%= row.details %></textarea><br/><br/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <label class="lable">date</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="date" name="date" class="inp" required /><br /><br />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <label class="lable">Image Insert Here</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="file" id="image" name="photo" class="inp1" accept="image/*">
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-section">
+                                                        <button type="submit" class="butt">Submit</button>
+                                                        <a href="/allprojects"><button type="button"
+                                                                class="butt">Back</button></a>
+                                                    </div>
+
+                                                </form>
+                                                <% }); %>
+                                                    <% } else { %>
+
+                                                        <p>No data available</p>
+
+                                                        <% } %>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        </div>
+                        <script src="/js/script.js"></script>
+
+
+            </body>

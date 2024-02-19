@@ -1,0 +1,90 @@
+<%- include('../partials/head.ejs') %>
+    <%- include('../partials/loading.ejs') %>
+        <%- include('../partials/header.ejs') %>
+
+
+            <body>
+                
+                        <div class="main-container">
+                            <div class="navcontainer">
+                                <%- include('../partials/nav.ejs') %>
+                            </div>
+                            <div class="main">
+                                <!-- <div class="searchbar2">
+                                    <input type="text" placeholder="Search">
+                                    <div class="searchbtn">
+                                        <img src="../images/search.png" class="icn srchic" alt="search-button">
+                                    </div>
+                                </div> -->
+
+                                <!-- <h1 class="recent-Articles">Edit Book Data</h1><br> -->
+                                <div class="report-container1">
+
+                                    <div class="report-header">
+                                    </div>
+                                    
+                                            <div class="form">
+                                                <form action="/addphotos" method="post" enctype="multipart/form-data">
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <label class="lable">Name</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="text" name="name" placeholder="Name"
+                                                                class="inp" required/><br /><br />
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <label class="lable">Type</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <select name="type" class="inp" required>
+                                                                <option value="" disabled selected>Select Type</option>
+                                                                <option value="construction">Construction</option>
+                                                                <option value="Realestate Property Agent">Realestate Property Agent</option>
+                                                                <option value="Software Consulting Services">Software Consulting Services</option>
+                                                                <option value="Transport and Mining">Transport and Mining</option>
+                                                                <option value="Bussiness Consulting">Bussiness Consulting</option>
+                                                                <option value="Water and Air Solutions">Water and Air Solutions</option>
+                                                            </select><br/><br/>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="row">
+                                                        <div class="col-1">
+                                                            <label class="lable">Location</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="text" name="location" 
+                                                                placeholder="Location"
+                                                                class="inp" required/><br /><br />
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="row">
+                                                        <div class="col-1">
+                                                            <label class="lable">Image Insert Here</label>
+                                                        </div>
+                                                        <div class="col-2">
+                                                            <input type="file" id="image" name="photo" class="inp1" accept="image/*" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-section">
+                                                        <button type="submit" class="butt">Submit</button>
+                                                        <a href="/allphotos"><button type="button"
+                                                                class="butt">Back</button></a>
+                                                    </div>
+                                                   
+                                                </form>
+                                            </div>
+                                            
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        </div>
+                        <script src="/js/script.js"></script>
+                        
+
+            </body>

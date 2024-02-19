@@ -1,0 +1,78 @@
+<%- include('../partials/head.ejs') %>
+  <%- include('../partials/loading.ejs') %>
+    <%- include('../partials/header.ejs') %>
+
+      <body>
+
+        <div class="main-container">
+          <div class="navcontainer">
+            <%- include('../partials/nav.ejs') %>
+          </div>
+          <div class="main">
+            
+            <div class="report-container-upr">
+              <div class="card height-auto">
+         
+                <div class="heading-layout1">
+                  <div class="item-title">
+                   
+                  
+                    
+                  </div>
+                </div>
+                <div class="single-info-details">
+                  <div class="item-content">
+                    <div class="header-inline item-header">
+                    </div>
+                    <div class="info-table table-responsive">
+                      <% if (data && data.length>0) { %>
+                        <% data.forEach((row) => { %>
+                          <div id="table3">
+                        <table class="table text-nowrap">
+                          <tbody>
+                            <tr>
+                              <td>Name:</td>
+                              <td>
+                                <%= row.name %>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Email Id:</td>
+                              <td>
+                                <%= row.username %>
+                              </td>
+                            </tr>
+                            
+                            <tr>
+                              <td>Phone:</td>
+                              <td>
+                                <%= row.phno %>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>Password:</td>
+                                <td>
+                                  <%= row.password %>
+                                </td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                        <% }); %>
+                        <% } else { %>
+                          <p>No data available for the specified roll number</p>
+                          <% } %>
+                    </div>
+                  </div>
+                </div>
+            
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+        <script src="/js/script.js"></script>  
+        
+      </body>

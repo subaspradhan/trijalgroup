@@ -1,0 +1,41 @@
+#loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 45, 46, 0.8); 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .background-radial-gradient {
+    background-color: #14064d;
+    height: 200%;
+      }
+      .bg-glass {
+        background-color: hsl(218.45deg 21.29% 68.26%) !important;
+        backdrop-filter: saturate(200%) blur(25px);
+      }
+      .btn-primary {
+        background: #14064d;
+        color: aliceblue;
+      }
+      .btn-primary:hover{
+        background: #14064d !important;
+        color: aliceblue;
+      }
+      .home{
+        overflow: hidden;
+      }
+      .error-message{
+        color: red;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      .images{
+        
+      }
+
+     
